@@ -18,11 +18,10 @@ public class TreeNode {
         this.right = right;
     }
 
-    public static TreeNode deserialize(String data) {
-        if (data == null || data.length() < 2) {
+    public static TreeNode build(String data) {
+        if (data == null || data.isEmpty()) {
             return null;
         }
-        data = data.substring(1, data.length() - 1);
         return deserialize(data.split(","), 0);
     }
 
