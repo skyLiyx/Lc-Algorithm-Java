@@ -3,7 +3,7 @@ package com.lyx.leetcode;
 /**
  * 11.盛最多水的容器
  *
- * 思路：双指针
+ * 思路：双指针+贪心
  *
  * @version 2023/09/02
  */
