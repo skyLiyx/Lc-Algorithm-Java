@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 29.两数相除
  *
- * 思路：二分法
+ * 思路：二分查找
  *
  * @version 2023/09/15
  */
@@ -42,9 +42,9 @@ public class Lc0029 {
             index++;
         }
         int res = 0;
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = list.size() - 1; i >= 0; i--) {
             if (list.get(i) >= dividend) {
-                res += 1 >> i;
+                res += 1 << i;
                 dividend -= list.get(i);
             }
         }
