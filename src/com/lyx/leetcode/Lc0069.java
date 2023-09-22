@@ -1,15 +1,16 @@
 package com.lyx.leetcode;
 
-import java.math.BigInteger;
-
 /**
  * 69.x的平方根
  *
- * 思路：二分查找
+ * 思路：二分查找/牛顿迭代
  *
  * @version 2023/09/20
  */
 public class Lc0069 {
+    /**
+     * 二分查找
+     */
     public int mySqrt(int x) {
         int res = -1;
         int left = 0, right = x;
@@ -24,5 +25,24 @@ public class Lc0069 {
             }
         }
         return res;
+    }
+
+    /**
+     * 牛顿迭代
+     */
+    public int mySqrt_1(int x) {
+        if (x == 0) {
+            return 0;
+        }
+        double x0 = x;
+        double e = 1e-7; // 精确值，10的-7次方
+        while (true) {
+            double xi = (x0 + x / x0) / 2;
+            if (Math.abs(x0 - xi) < e) {
+                break;
+            }
+            x0 = xi;
+        }
+        return (int)x0;
     }
 }
