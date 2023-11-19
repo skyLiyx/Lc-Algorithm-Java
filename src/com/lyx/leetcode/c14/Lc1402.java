@@ -14,6 +14,8 @@ public class Lc1402 {
         for (int i = 0; i < satisfaction.length; i++) {
             if (satisfaction[i] < 0) {
                 p = i;
+            } else {
+                break;
             }
         }
         if (p == satisfaction.length - 1) {
